@@ -1,0 +1,18 @@
+#!/bin/sh
+
+if [ "$1" = "/bin/sh" ]; then
+  shift
+fi
+
+if [ -n "$HTTPS_PORT" ]; then
+  FWD="`echo $HTTPS_PORT | sed 's|^tcp://||'`"
+elif [ -n "$HTTP_PORT" ]; then
+  FWD="`echo $HTTP_PORT | sed 's|^tcp://||'`"
+fi
+
+case "$1" in
+  -h|help)  ARGS=$1 ;;
+  *)        ARGS="-config /.ngrok -log stdout $* $FWD" ;;
+esac
+
+exec /bin/ngrok $ARGS
