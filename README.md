@@ -25,7 +25,7 @@ Now we'll link the HTTP server container into an ngrok container to expose the s
 
 To get the `*.ngrok.com` address, check the container's logs:
 
-    docker logs ngrok_www
+    docker logs www_ngrok
 
 The ngrok web inspection interface is running on port 4040. To get the exposed port:
 
