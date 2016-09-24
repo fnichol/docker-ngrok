@@ -1,6 +1,6 @@
 # docker-ngrok
 
-A [Docker][docker] image for [ngrok][ngrok], introspected tunnels to localhost. The image is built using [progrium/busybox][progrium_busybox] to keep the footprint as small as possible.
+A [Docker][docker] image for [ngrok][ngrok], introspected tunnels to localhost. The image is built using [Alpine Linux][alpine] to keep the footprint as small as possible.
 
 The container will tunnel either HTTP or HTTPS traffic by using the `HTTPS_PORT` or `HTTP_PORT` environment variables. Either environment variable can be set using the `-e` flag when running an ngrok container or by using [linked containers](https://docs.docker.com/userguide/dockerlinks/#container-linking), which is shown below.
 
@@ -57,5 +57,5 @@ MIT (see [License.txt][license])
 [license]:  https://github.com/fnichol/docker-ngrok/blob/master/License.txt
 
 [docker]:           https://www.docker.io/
-[progrium_busybox]: https://github.com/progrium/busybox
+[alpine]:           https://hub.docker.com/_/alpine/
 [ngrok]:            https://ngrok.com/

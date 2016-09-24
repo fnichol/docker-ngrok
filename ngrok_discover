@@ -23,4 +23,5 @@ case "$1" in
   *)        ARGS="--config $HOME/ngrok.yml $FWD" ;;
 esac
 
+set -x
 exec /bin/ngrok http $ARGS
