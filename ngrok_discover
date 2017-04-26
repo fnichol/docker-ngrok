@@ -24,4 +24,7 @@ case "$1" in
 esac
 
 set -x
+if [ -n "$AUTH_TOKEN" ]; then
+     /bin/ngrok authtoken --config $HOME/ngrok.yml $AUTH_TOKEN
+fi
 exec /bin/ngrok http $ARGS

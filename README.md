@@ -31,6 +31,13 @@ The ngrok web inspection interface is running on port 4040. To get the exposed p
 
     docker port www_ngrok 4040
 
+### Link to your ngrok account
+
+Get your Auth Token at https://dashboard.ngrok.com/auth and set the AUTH_TOKEN
+environment variable when executing ngrok container.
+
+    docker run -d -p 4040 --link www:http -e AUTH_TOKEN=43ef...G40fe --name www_ngrok fnichol/ngrok
+
 ## Development
 
 * Source host at [GitHub][repo]
